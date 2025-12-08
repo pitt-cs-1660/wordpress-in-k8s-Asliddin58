@@ -56,7 +56,7 @@ spec:
             configMapKeyRef:
               name: wordpress
               key: user
-        -name: WORDPRESS_DB_PASSWORD
+        - name: WORDPRESS_DB_PASSWORD
         valueFrom:
            secretKeyRef:
              name: database
