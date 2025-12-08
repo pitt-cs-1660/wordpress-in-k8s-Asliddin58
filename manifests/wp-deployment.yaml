@@ -46,21 +46,21 @@ spec:
       - image: wordpress:6.2.1-apache
         name: wordpress
         env:
-        - name: WORDPRESS_DB_HOST
-          valueFrom:
-            configMapKeyRef:
-              name: wordpress
-              key: host
-        - name: WORDPRESS_DB_USER
-          valueFrom:
-            configMapKeyRef:
-              name: wordpress
-              key: user
-        - name: WORDPRESS_DB_PASSWORD
-        valueFrom:
-           secretKeyRef:
-             name: database
-             key: user-password
+          - name: WORDPRESS_DB_HOST
+            valueFrom:
+              configMapKeyRef:
+                name: wordpress
+                key: host
+          - name: WORDPRESS_DB_USER
+            valueFrom:
+              configMapKeyRef:
+                name: wordpress
+                key: user
+          - name: WORDPRESS_DB_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: database
+                key: user-password
 
         ##
         # mount sensitive environment vars from secret using secretKeyRef
